@@ -1,7 +1,7 @@
-$IP = "10.0.1.1"
+$IP = "192.168.234.127"
 $Hostname = "dc01"
-$Domain = "victim.com"
-$Password = "P@ssw0rd"
+$Domain = "gamers.com"
+$Password = "Password@123"
 $ProgressFile = "progress.txt"
 $Progress = 0
 

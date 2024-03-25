@@ -20,9 +20,9 @@ The plaintext password for SafeModeAdministratorPassword.
 
 .EXAMPLE
 
-New-Forest -Domain victim.com -SafeModeAdministratorPassword "P@ssw0rd"
+New-Forest -Domain gamers.com -SafeModeAdministratorPassword "Password@123"
 
-Install a new AD forest "victim.com".
+Install a new AD forest "gamers.com".
 
 #>
     [CmdletBinding()]
@@ -83,9 +83,9 @@ The plaintext password for parent domain admin.
 
 .EXAMPLE
 
-New-Domain -Domain taipei -ParentDomain victim.com -SafeModeAdministratorPassword "P@ssw0rd" -ParentDomainAdminUsername "VICTIM\Administrator" -ParentDomainAdminPassword "~ADTest"
+New-Domain -Domain taipei -ParentDomain gamers.com -SafeModeAdministratorPassword "Password@123" -ParentDomainAdminUsername "GAMERS\Administrator" -ParentDomainAdminPassword "Password@123"
 
-Install a AD domain "taipei.victim.com" and join the parent domain "victim.com".
+Install a AD domain "taipei.gamers.com" and join the parent domain "gamers.com".
 
 #>
     [CmdletBinding()]
@@ -156,9 +156,9 @@ The index of the network adapter (listing adapters with Get-NetAdapter).
 
 .EXAMPLE
 
-Set-Network -IP 10.0.1.1 -DNSServers 8.8.8.8
+Set-Network -IP 192.168.234.127 -DNSServers 8.8.8.8
 
-Set IP address to 10.0.1.1 and set DNS server to 8.8.8.8 for the first network adapter.
+Set IP address to 192.168.234.127 and set DNS server to 8.8.8.8 for the first network adapter.
 
 #>
     [CmdletBinding()]
@@ -248,7 +248,7 @@ Service Principal Name that is added to the specified user.
 
 .EXAMPLE
 
-Set-Kerberoasting -User Luffy -SPN "roast/ws01.victim.com"
+Set-Kerberoasting -User Luffy -SPN "roast/ws01.gamers.com"
 
 Add a SPN for user Luffy (who uses weak password) so that he is kerberoastable.
 
@@ -448,7 +448,7 @@ The user who is to be given the write permission.
 
 .EXAMPLE
 
-Add-WritePermissionToUser -DistinguishedName "CN=WS02,CN=Computers,DC=taipei,DC=victim,DC=com" -User Sanji
+Add-WritePermissionToUser -DistinguishedName "CN=WS02,CN=Computers,DC=taipei,DC=gamers,DC=com" -User Sanji
 
 Add write permission of ws02 to user Sanji.
 

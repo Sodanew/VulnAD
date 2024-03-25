@@ -1,11 +1,11 @@
-$IP = "10.0.1.2"
+$IP = "192.168.234.126"
 $Hostname = "dc02"
-$ParentDomain = "victim.com"
-$ParentDCIP = "10.0.1.1"
+$ParentDomain = "gamers.com"
+$ParentDCIP = "192.168.234.127"
 $Domain = "taipei"
-$ParentDomainAdminUsername = "VICTIM\Administrator"
-$ParentDomainAdminPassword = "~ADTest" # TODO: modify this
-$SafeModeAdministratorPassword = "P@ssw0rd"
+$ParentDomainAdminUsername = "GAMERS\Administrator"
+$ParentDomainAdminPassword = "Password@123" # TODO: modify this
+$SafeModeAdministratorPassword = "Password@123"
 $UserJsonFile = "credentials.json"
 $ProgressFile = "progress.txt"
 $Progress = 0
@@ -39,9 +39,9 @@ Switch ($Progress) {
         }
         Create-UserFromJson -Path $UserJsonFile
         Set-ASREPRoasting -User Usopp
-        Set-Kerberoasting -User Chopper -SPN "roast/ws02.victim.com"
+        Set-Kerberoasting -User Chopper -SPN "roast/ws02.gamers.com"
         net group "Domain Admins" Luffy /add /Domain
-        Add-WritePermissionToUser -DistinguishedName "CN=WS01,CN=Computers,DC=taipei,DC=victim,DC=com" -User Sanji
+        Add-WritePermissionToUser -DistinguishedName "CN=WS01,CN=Computers,DC=taipei,DC=gamers,DC=com" -User Sanji
         Set-UnconstainedDelegation -Identity ws01$
         Set-ConstrainedDelegation -Identity ws02$ -AllowedSPN 'CIFS/ws01'
         Invoke-Command -ComputerName ws02 -ScriptBlock {net localgroup administrators TAIPEI\Chopper /add}

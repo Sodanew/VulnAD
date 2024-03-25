@@ -1,9 +1,9 @@
-$IP = "10.0.1.12"
-$DCIP = "10.0.1.2"
+$IP = "192.168.234.124"
+$DCIP = "192.168.234.126"
 $Hostname = "ws02"
-$Domain = "taipei.victim.com"
+$Domain = "taipei.gamers.com"
 $DomainAdminUsername = "Administrator"
-$DomainAdminPassword = "~ADTest" # TODO: Modify this
+$DomainAdminPassword = "Password@123" # TODO: Modify this
 $ProgressFile = "progress.txt"
 $Progress = 0
 
